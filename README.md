@@ -83,8 +83,8 @@ $ go1.19.3 download
 `1.13.8`は使わないので、エイリアスを設定しましょう。
 
 ```bash
-$ echo 'alias go=go1.19.3'  >> ~/.profile
-$ source ~/.profile
+$ echo 'alias go=go1.19.3'  >> ~/.bashrc
+$ source ~/.bashrc
 ```
 
 バージョンを確認して`1.19.3`と表示されることを確認してください。
