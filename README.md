@@ -181,6 +181,12 @@ $ git clone https://github.com/uecconsecexp/secexp2022_template.git
 
 `kadai1/main.go`を作成する目的は、Go言語に慣れること、ファイルロード、行列計算の仕組みを整えることにあります。
 
+`kadai1/main.go`の実行は、`contentssecrity`ディレクトリに移動したのち、以下のコマンドで行えます。
+
+```bash
+$ go run kadai1/main.go
+```
+
 ### PPDMプログラム: `kadai2/main.go`
 
 パートナーとなった人と中学校役・予備校役に分かれてPPDMプログラムを作成します。
@@ -213,6 +219,14 @@ $ git clone https://github.com/uecconsecexp/secexp2022_template.git
 
 (正則な乱数行列の送信を考慮すると中学校側でも乱数行列の逆行列の存在を確かめるように実装するべきかもしれません。どれだけ実装するかはパートナーと決めてください。)
 
+`kadai2/main.go`の実行は、`kadai1/main.go`同様、`contentssecrity`ディレクトリに移動したのち、以下のコマンドで行えます。
+
+```bash
+$ go run kadai2/main.go
+```
+
+ただし上記は`demo`関数で一人で検証する時用です。ペアワークでの実行は「仮想環境について」の節を参考にしてください。
+
 ## 3週目: 通信部分の実装
 
 3週目では、パートナーとTCP通信によってPPDMアルゴリズムが実際に行えることを確かめます。
@@ -244,7 +258,7 @@ IEDで作成したPPDM実行バイナリ及び入力データは、仮想環境�
 
 ```bash
 # contentssecurityディレクトリにて
-$ go build kadai1/main.go
+$ go build kadai2/main.go
 # 実行ファイルmainができます。
 $ cd ..
 # 取捨選択してコピーしても良いですが、プロジェクトごとコピーしてしまいましょう
