@@ -257,9 +257,9 @@ sshは`logout`コマンドで終了できます。
 IEDで作成したPPDM実行バイナリ及び入力データは、仮想環境にコピーして実行します。
 
 ```bash
-# contentssecurityディレクトリにて
-$ go build kadai2/main.go
-# 実行ファイルmainができます。
+# contentssecurity/kadai2ディレクトリにて
+$ go build main.go
+# kadai2ディレクトリに実行ファイルmainができます。
 $ cd ..
 # 取捨選択してコピーしても良いですが、プロジェクトごとコピーしてしまいましょう
 $ scp -r contentssecurity root@linux〇〇:~/
@@ -272,8 +272,12 @@ $ scp -r contentssecurity root@linux〇〇:~/
 $ ssh root@linux〇〇
 # 以降実際のプロンプトは`#`でありroot実行
 $ cd ~/contentssecurity
-$ ./main
+$ ./kadai2/main
 ```
+
+また、仮想環境からログアウトしてもrootユーザーのホームにcontentssecurityディレクトリが残ります。誰でも見れてしまうので、見られたくない方は使用後は仮想環境から消しましょう。
+
+(間違えて開発環境のcontentssecurityを消してしまうと悲惨なので気にしない方はそのままでよいです。)
 
 ### 通信方法
 
