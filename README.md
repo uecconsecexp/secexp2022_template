@@ -72,6 +72,13 @@ $ echo 'export https_proxy=http://proxy.uec.ac.jp:8080'  >> ~/.profile
 $ source ~/.profile
 ```
 
+後述の`git clone`コマンドがうまくいかない場合は、git用のプロキシ設定を試してください(コマンド実行は一度だけで大丈夫です)。
+
+```bash
+$ git config --global http.proxy http://proxy.uec.ac.jp:8080
+$ git config --global https.proxy http://proxy.uec.ac.jp:8080
+```
+
 ### 最新版のgoの取得
 
 IED環境で使えるgoは`apt`で取得されているため少し古いものになっています。以下のようにしてバージョンを確認できます。
@@ -157,7 +164,16 @@ $ git clone https://github.com/uecconsecexp/secexp2022_template.git
 
 そのままでも支障はありませんが、テンプレートディレクトリの名前は`mv`コマンドでわかりやすいものに変えましょう。
 
-また本テンプレートはWebClassでも配布予定です。
+`git clone`コマンドがタイムアウトになり上手に取得できない場合は、プロキシ環境変数が適切に設定されていない可能性があります。
+
+環境変数を適切に設定しているのにもかかわらず`git clone`コマンドのみうまくいかない場合は、git用のプロキシ設定を試してください(次のコマンドは一度打つだけで大丈夫です)。
+
+```bash
+$ git config --global http.proxy http://proxy.uec.ac.jp:8080
+$ git config --global https.proxy http://proxy.uec.ac.jp:8080
+```
+
+参考ページ: https://maku77.github.io/git/settings/proxy.html
 
 ## 1週目および2週目: 計算部分の実装
 
@@ -237,7 +253,7 @@ $ go run kadai2/main.go
 
 PPDM通信の検証にはIEDの仮想環境を使用します。
 
-ホストはlinux01～linux30まであります。使用する端末は割り当てられたものにしてください。IEDのターミナルからsshすることで接続します。
+ホストはlinux01～linux60まであります。使用する端末は割り当てられたものにしてください。IEDのターミナルからsshすることで接続します。
 
 - ホスト名: linux〇〇
 - ユーザ名: root
